@@ -22,3 +22,8 @@ Restrições de Operações:
  + ENCADEADA:
     - Usa um descritor para armazenar o nodo do Topo da pilha
 '''
+
+class Nodo:
+    def __init__(self,data):
+        self.data = data
+        self.next = None
