@@ -65,6 +65,13 @@ class StackConPhy:
         else:
             return self.__vector[self.__top]
 
+    def pop(self):
+        if self.__top > self.__base:
+            self.__top = self.__top - 1
+            return True
+        else:
+            return False
+
 if __name__ == "__main__":
     stack1 = StackConPhy(10)
     print(stack1.isEmpty())
