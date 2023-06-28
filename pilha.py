@@ -57,17 +57,28 @@ class StackConPhy:
             self.__vector[self.__top] = data
             return True
         else:
+            print('Stack OverFlow')
             return False
 
     def peek(self):
+        ''' Method to return top of stack, if is empty return a None'''
         if self.isEmpty():
             return None
         else:
             return self.__vector[self.__top]
 
     def pop(self):
+        ''' Method to remove a element in stack, return a bool'''
         if self.__top >= self.__base:
             self.__top = self.__top - 1
+            return True
+        else:
+            print('Stack UnderFlow')
+            return False
+
+    def destroy(self):
+        if not(self.isEmpty()):
+            self.__top = self.__base - 1
             return True
         else:
             return False
@@ -92,5 +103,13 @@ if __name__ == "__main__":
     print(stack1.peek())
     stack1.pop()
     print(stack1.peek())
+    stack1.push(5)
+    stack1.push(1)
+    stack1.push(4)
+    stack1.push(6)
+    print(stack1.peek())
+    stack1.destroy()
+    print(stack1.peek())
+
 
 
