@@ -65,6 +65,14 @@ class StackConPhy:
         else:
             return self.__vector[self.__top]
 
-stack1 = StackConPhy(10)
-print(stack1.isEmpty())
-print(stack1.push(1))
+if __name__ == "__main__":
+    stack1 = StackConPhy(10)
+    print(stack1.isEmpty())
+    stack1.push(1)
+    print(stack1.peek())
+    stack1.push(3)
+    print(stack1.peek())
+    stack1.push(4)
+    print(stack1.peek())
+    stack1.push(5)
+    print(stack1.peek())
