@@ -66,7 +66,7 @@ class StackConPhy:
             return self.__vector[self.__top]
 
     def pop(self):
-        if self.__top > self.__base:
+        if self.__top >= self.__base:
             self.__top = self.__top - 1
             return True
         else:
@@ -83,3 +83,14 @@ if __name__ == "__main__":
     print(stack1.peek())
     stack1.push(5)
     print(stack1.peek())
+
+    stack1.pop()
+    print(stack1.peek())
+    stack1.pop()
+    print(stack1.peek())
+    stack1.pop()
+    print(stack1.peek())
+    stack1.pop()
+    print(stack1.peek())
+
+
