@@ -38,23 +38,27 @@ class StackConPhy:
             + Base - Indice que inicia a pilha
             + Topo - Indice que representa o topo
         '''
-        self.lim = size - 1
-        self.vector = [None] * size
-        self.base = 0
-        self.top = self.base - 1
+        self.__lim = size - 1
+        self.__vector = [None] * size
+        self.__base = 0
+        self.__top = self.__base - 1
 
     def isEmpty(self):
         ''' Method to check if stack is empty or not, return a bool'''
-        if self.top < 0:
+        if self.__top < 0:
             return True
         else:
             return False
 
     def push(self,data):
         ''' Method to add a new data to top of stack, return a bool about te success of method'''
-        if not(self.isEmpty()):
-            self.top = self.top + 1
-            self.vector[self.top] = data
+        if self.__top < self.__lim:
+            self.__top = self.__top + 1
+            self.__vector[self.__top] = data
             return True
         else:
             return False
+
+stack1 = StackConPhy(10)
+print(stack1.isEmpty())
+print(stack1.push(1))
