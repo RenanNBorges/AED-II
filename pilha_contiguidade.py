@@ -1,4 +1,5 @@
 '''
+Feito por Renan Nunes Borges
 Arquivo Contendo Tipos Abstratos de Dado Pilha com principio LIFO (Last In, First Out) são Lista Lineares Especiais.
 
 Tem acesso restrito, somente ao topo da pilha
