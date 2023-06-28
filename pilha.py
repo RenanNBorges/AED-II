@@ -59,6 +59,12 @@ class StackConPhy:
         else:
             return False
 
+    def peek(self):
+        if self.isEmpty():
+            return None
+        else:
+            return self.__vector[self.__top]
+
 stack1 = StackConPhy(10)
 print(stack1.isEmpty())
 print(stack1.push(1))
