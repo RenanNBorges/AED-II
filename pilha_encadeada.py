@@ -26,7 +26,7 @@ Restrições de Operações:
     - Usa nodos para indicar o topo da pilha
 '''
 
-class Nodo:
+class Node:
     def __init__(self,data):
         self.data = data
         self.next = None
@@ -42,4 +42,4 @@ class StackLinked:
             return True
 
     def push(self,data):
-        new_top = Nodo
+        new_top = Node(data)
