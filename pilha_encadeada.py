@@ -31,7 +31,7 @@ class Node:
         self.data = data
         self.next = None
 
-class StackLinked:
+class DynamicStack:
     def __init__(self):
         self.__top = None
 
