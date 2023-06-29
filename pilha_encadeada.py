@@ -23,9 +23,23 @@ Restrições de Operações:
 
  + ENCADEADA:
     - Usa um descritor para armazenar o nodo do Topo da pilha
+    - Usa nodos para indicar o topo da pilha
 '''
 
 class Nodo:
     def __init__(self,data):
         self.data = data
         self.next = None
+
+class StackLinked:
+    def __init__(self):
+        self.__top = None
+
+    def isEmpty(self):
+        if self.__top != None:
+            return False
+        else:
+            return True
+
+    def push(self,data):
+        new_top = Nodo

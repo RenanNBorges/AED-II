@@ -25,7 +25,7 @@ Restrições de Operações:
     - Usa um descritor para armazenar o nodo do Topo da pilha
 '''
 
-class StackConPhy:
+class StaticStack:
     def __init__(self,size):
         '''Construtor da Pilha de Contiguidade Fisica
         Atrbutos:
@@ -80,32 +80,32 @@ class StackConPhy:
             return False
 
 if __name__ == "__main__":
-    stack1 = StackConPhy(10)
-    print(stack1.isEmpty())
-    stack1.push(1)
-    print(stack1.peek())
-    stack1.push(3)
-    print(stack1.peek())
-    stack1.push(4)
-    print(stack1.peek())
-    stack1.push(5)
-    print(stack1.peek())
+    test_static_stack = StaticStack(10)
+    print(test_static_stack.isEmpty())
+    test_static_stack.push(1)
+    print(test_static_stack.peek())
+    test_static_stack.push(3)
+    print(test_static_stack.peek())
+    test_static_stack.push(4)
+    print(test_static_stack.peek())
+    test_static_stack.push(5)
+    print(test_static_stack.peek())
 
-    stack1.pop()
-    print(stack1.peek())
-    stack1.pop()
-    print(stack1.peek())
-    stack1.pop()
-    print(stack1.peek())
-    stack1.pop()
-    print(stack1.peek())
-    stack1.push(5)
-    stack1.push(1)
-    stack1.push(4)
-    stack1.push(6)
-    print(stack1.peek())
-    stack1.destroy()
-    print(stack1.peek())
+    test_static_stack.pop()
+    print(test_static_stack.peek())
+    test_static_stack.pop()
+    print(test_static_stack.peek())
+    test_static_stack.pop()
+    print(test_static_stack.peek())
+    test_static_stack.pop()
+    print(test_static_stack.peek())
+    test_static_stack.push(5)
+    test_static_stack.push(1)
+    test_static_stack.push(4)
+    test_static_stack.push(6)
+    print(test_static_stack.peek())
+    test_static_stack.destroy()
+    print(test_static_stack.peek())
 
 
 
