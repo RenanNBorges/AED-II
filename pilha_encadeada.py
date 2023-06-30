@@ -43,3 +43,8 @@ class DynamicStack:
 
     def push(self,data):
         new_top = Node(data)
+        if not(self.isEmpty()):
+            new_top.next = self.__top
+        self.__top = new_top
+
+
