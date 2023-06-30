@@ -64,9 +64,9 @@ class DynamicStack:
             return True
 
     def destroy(self):
-        while self.is_empty():
+        while not(self.is_empty()):
             self.pop()
-        return True
+
 
 
 if __name__ == "__main__":
@@ -84,8 +84,9 @@ if __name__ == "__main__":
     stack_test.peek()
     stack_test.pop()
     stack_test.peek()
-    stack_test.push(8)
+    stack_test.destroy()
     stack_test.peek()
+
 
 
 
