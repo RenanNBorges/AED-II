@@ -63,6 +63,11 @@ class DynamicStack:
             self.__top = self.__top.next
             return True
 
+    def destroy(self):
+        while self.is_empty():
+            self.pop()
+        return True
+
 
 if __name__ == "__main__":
     stack_test = DynamicStack()
