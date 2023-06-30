@@ -12,7 +12,7 @@ Restrições de Operações:
  - new (Criar nova pilha Vazia)
  - push (Inserir um nó no topo da pilha)
  - pop (Excluir o nó no topo da pilha)
- - top (COnsulta o nó no topo da pilha)
+ - top (Consulta o nó no topo da pilha)
  - destroy (Destrói a pilha)
  - isEmpty (Verifica se a pilha est[a vazia)
 
@@ -40,11 +40,28 @@ class DynamicStack:
             return False
         else:
             return True
-
+    def peek(self):
+        if self.__top != None:
+            return print(self.__top.data)
+        else:
+            return print(None)
     def push(self,data):
         new_top = Node(data)
         if not(self.isEmpty()):
             new_top.next = self.__top
         self.__top = new_top
+
+stack_test = DynamicStack()
+stack_test.peek()
+stack_test.push(2)
+stack_test.peek()
+stack_test.push(1)
+stack_test.peek()
+stack_test.push(7)
+stack_test.peek()
+stack_test.push(8)
+stack_test.peek()
+
+
 
 
