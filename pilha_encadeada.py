@@ -56,19 +56,31 @@ class DynamicStack:
             new_top.next = self.__top
         self.__top = new_top
 
+    def pop(self):
+        if self.is_empty():
+            return False
+        else:
+            self.__top = self.__top.next
+            return True
 
 
-stack_test = DynamicStack()
+if __name__ == "__main__":
+    stack_test = DynamicStack()
 
-stack_test.peek()
-stack_test.push(2)
-stack_test.peek()
-stack_test.push(1)
-stack_test.peek()
-stack_test.push(7)
-stack_test.peek()
-stack_test.push(8)
-stack_test.peek()
+    stack_test.peek()
+    stack_test.push(2)
+    stack_test.peek()
+    stack_test.push(1)
+    stack_test.peek()
+    stack_test.push(7)
+    stack_test.peek()
+    stack_test.push(8)
+    stack_test.pop()
+    stack_test.peek()
+    stack_test.pop()
+    stack_test.peek()
+    stack_test.push(8)
+    stack_test.peek()
 
 
 
