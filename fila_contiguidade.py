@@ -56,5 +56,7 @@ class StaticQueue:
         elif self.__end == self.__ls:
             self.__end = self.__li
 
+        self.__vector[self.__end] = data
+
 queue_teste = StaticQueue(13)
 queue_teste.peek()
