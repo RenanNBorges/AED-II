@@ -32,3 +32,9 @@ class StaticQueue:
         self.__ini = -1
         self.__end = -1
 
+    def is_empty(self)
+        if self.__ini and self.__end != -1:
+            return False
+        else:
+            return True
+
