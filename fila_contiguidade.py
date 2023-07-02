@@ -23,3 +23,12 @@ ini : início da fila
 fim : final da fila
 LS : limite superior da área
 """
+
+class Fila:
+    def __init__(self,size):
+        self.__li = 0
+        self.__ls = size - 1
+        self.__vector = [None] * size
+        self.__ini = -1
+        self.__end = -1
+
