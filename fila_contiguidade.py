@@ -38,3 +38,9 @@ class StaticQueue:
         else:
             return True
 
+    def peek(self):
+        if not(self.is_empty()):
+            return print(self.__vector[self.__vector])
+        else:
+            return print(None)
+
