@@ -46,5 +46,15 @@ class StaticQueue:
         else:
             return print(None)
 
+    def insert(self,data):
+        if self.__ini <= self.__end and self.__end < self.__ls:
+            if self.is_empty():
+                self.__ini = 1
+                self.__end = 1
+            else:
+                self.__end = self.__end + 1
+        elif self.__end == self.__ls:
+            self.__end = self.__li
+
 queue_teste = StaticQueue(13)
 queue_teste.peek()
