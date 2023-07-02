@@ -4,7 +4,8 @@ Feito por Renan Nunes Borges
 Arquivo contendo representações de Tipos Abstratos de Dados Fila
 
 Filas usam do príncipio de FIFO (First in, First Out)
-Tem acesso restrito há o primeiro e ultimo elemento que foi inserido, mas as operações de consulta e exclusão são somente pelo primeiro
+Tem acesso restrito há o primeiro e ultimo elemento que foi inserido
+Mas as operações de consulta e exclusão são somente pelo primeiro
 OPERAÇÕES que são afetas pelas restrições:
  * Inserir
  * Excluir
@@ -24,15 +25,16 @@ fim : final da fila
 LS : limite superior da área
 """
 
+
 class StaticQueue:
-    def __init__(self,size):
+    def __init__(self, size):
         self.__li = 0
         self.__ls = size - 1
         self.__vector = [None] * size
         self.__ini = -1
         self.__end = -1
 
-    def is_empty(self)
+    def is_empty(self):
         if self.__ini and self.__end != -1:
             return False
         else:
@@ -44,3 +46,5 @@ class StaticQueue:
         else:
             return print(None)
 
+queue_teste = StaticQueue(13)
+queue_teste.peek()
