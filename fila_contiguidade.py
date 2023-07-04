@@ -46,8 +46,8 @@ class StaticQueue:
         else:
             return print(None)
 
-    def insert(self,data):
-        continue
+    def insert(self, data):
+        pass
         # Testar se tem espaço
         # Inserir no fim
         # Inserir no inicio
@@ -62,6 +62,7 @@ class StaticQueue:
     def destroy(self):
         self.__ini = -1
         self.__end = -1
+
 
 queue_teste = StaticQueue(13)
 queue_teste.peek()
