@@ -25,9 +25,12 @@ Não há limite em uma fila encadeada
 
 
 class Node:
-    def __init__(self,data):
+    def __init__(self, data):
         self.data = data
         self.next = None
+
+    def __str__(self):
+        return f'{self.data} -> {self.next}'
 
 
 class DynamicQueue:
@@ -36,7 +39,7 @@ class DynamicQueue:
         self.end = None
 
     def is_empty(self):
-        if self.ini and self.end is None:
+        if self.ini and self.end is not None:
             return False
         else:
             return True
@@ -52,7 +55,35 @@ class DynamicQueue:
         self.end = new_element
 
     def peek(self):
-        return print(self.ini)
+        if self.is_empty():
+            return print(None)
+        else:
+            return print(self.ini.data)
 
+    def remove(self):
+        if self.is_empty():
+            return False
+        else:
+            if self.ini != self.end:
+                self.ini = self.ini.next
+            else:
+                self.ini = None
+                self.end = None
+            return True
 
+    def destroy(self):
+        self.ini = None
+        self.end = None
 
+if __name__ == '__main__':
+    queue = DynamicQueue()
+    queue.peek()
+    queue.insert(9)
+    queue.peek()
+    queue.insert(8)
+    queue.peek()
+    queue.peek()
+    queue.insert(7)
+    queue.peek()
+    queue.destroy()
+    queue.peek()
