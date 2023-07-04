@@ -53,5 +53,11 @@ class StaticQueue:
         # Inserir no inicio
         # Inserir no meio
 
+    def remove(self):
+        if self.__ini < self.__end:
+            self.__ini = self.__ini + 1
+        elif self.__ini == self.__ls and self.__li == self.__end:
+            self.__ini = self.__li
+
 queue_teste = StaticQueue(13)
 queue_teste.peek()
