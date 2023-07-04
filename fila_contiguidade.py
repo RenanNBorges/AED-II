@@ -59,5 +59,9 @@ class StaticQueue:
         elif self.__ini == self.__ls and self.__li == self.__end:
             self.__ini = self.__li
 
+    def destroy(self):
+        self.__ini = -1
+        self.__end = -1
+
 queue_teste = StaticQueue(13)
 queue_teste.peek()
