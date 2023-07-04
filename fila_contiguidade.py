@@ -48,11 +48,20 @@ class StaticQueue:
 
     def insert(self, data):
         # Testar se tem espaço
-        # Inserir no fim
-        self.__end = self.__end + 1
-        self.__vector[self.__end] = data
-        # Inserir no inicio
-        # Inserir no meio
+        if (self.__ini == self.__li and self.__end == self.__ls) or (self.__end == self.__ini - 1):
+            return False
+
+        else:
+            # Inserir no Inicio
+            if self.__end == self.__ls:
+                self.__end = self.__li
+
+            # Inserir no meio e no fim
+            else:
+                self.__end = self.__end + 1
+
+            self.__vector[self.__end] = data
+            return True
 
     def remove(self):
         if self.__ini < self.__end:
