@@ -56,9 +56,9 @@ class DynamicQueue:
 
     def peek(self):
         if self.is_empty():
-            return print(None)
+            return None
         else:
-            return print(self.ini.data)
+            return self.ini.data
 
     def remove(self):
         if self.is_empty():
@@ -75,15 +75,3 @@ class DynamicQueue:
         self.ini = None
         self.end = None
 
-if __name__ == '__main__':
-    queue = DynamicQueue()
-    queue.peek()
-    queue.insert(9)
-    queue.peek()
-    queue.insert(8)
-    queue.peek()
-    queue.peek()
-    queue.insert(7)
-    queue.peek()
-    queue.destroy()
-    queue.peek()

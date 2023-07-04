@@ -42,9 +42,9 @@ class StaticQueue:
 
     def peek(self):
         if not (self.is_empty()):
-            return print(self.vector[self.ini])
+            return self.vector[self.ini]
         else:
-            return print(None)
+            return None
 
     def insert(self, data):
         # Testar se tem espaço
