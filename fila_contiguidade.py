@@ -50,6 +50,8 @@ class StaticQueue:
         pass
         # Testar se tem espaço
         # Inserir no fim
+        self.__end = self.__end + 1
+        self.__vector[self.__end] = data
         # Inserir no inicio
         # Inserir no meio
 
