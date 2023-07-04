@@ -47,7 +47,6 @@ class StaticQueue:
             return print(None)
 
     def insert(self, data):
-        pass
         # Testar se tem espaço
         # Inserir no fim
         self.__end = self.__end + 1
