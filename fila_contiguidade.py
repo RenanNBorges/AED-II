@@ -28,51 +28,86 @@ LS : limite superior da área
 
 class StaticQueue:
     def __init__(self, size):
-        self.__li = 0
-        self.__ls = size - 1
-        self.__vector = [None] * size
-        self.__ini = -1
-        self.__end = -1
+        self.li = 0
+        self.ls = size - 1
+        self.vector = [None] * size
+        self.ini = -1
+        self.end = -1
 
     def is_empty(self):
-        if self.__ini and self.__end != -1:
-            return False
-        else:
+        if self.ini and self.end == -1:
             return True
+        else:
+            return False
 
     def peek(self):
-        if not(self.is_empty()):
-            return print(self.__vector[self.__vector])
+        if not (self.is_empty()):
+            return print(self.vector[self.ini])
         else:
             return print(None)
 
     def insert(self, data):
         # Testar se tem espaço
-        if (self.__ini == self.__li and self.__end == self.__ls) or (self.__end == self.__ini - 1):
+        if (self.ini == self.li and self.end == self.ls) or (self.end == self.ini - 1):
             return False
 
         else:
             # Inserir no Inicio
-            if self.__end == self.__ls:
-                self.__end = self.__li
+            if self.is_empty():
+                self.ini = 0
+                self.end = self.ini
+
+            elif self.end == self.ls and self.ini:
+                self.end = self.li
 
             # Inserir no meio e no fim
             else:
-                self.__end = self.__end + 1
+                self.end = self.end + 1
 
-            self.__vector[self.__end] = data
+            self.vector[self.end] = data
             return True
 
     def remove(self):
-        if self.__ini < self.__end:
-            self.__ini = self.__ini + 1
-        elif self.__ini == self.__ls and self.__li == self.__end:
-            self.__ini = self.__li
+        if not (self.is_empty()):
+            if self.ini == self.end:
+                self.vector[self.ini] = None
+
+                self.ini = -1
+                self.end = -1
+
+            elif self.ini == self.ls and (self.li <= self.end and self.end < self.ini):
+                self.vector[self.ls] = None
+                self.ini = self.li
+
+            else:
+                self.ini = self.ini + 1
+                self.vector[self.ini-1] = None
+
+
+            return True
+        else:
+            return False
 
     def destroy(self):
-        self.__ini = -1
-        self.__end = -1
+        while (self.ini and self.end) !=/ -1:
+            self.remove()
 
 
-queue_teste = StaticQueue(13)
+queue_teste = StaticQueue(3)
+queue_teste.insert(1)
+queue_teste.insert(2)
+queue_teste.insert(3)
+queue_teste.insert(4)
+queue_teste.insert(5)
+queue_teste.remove()
+queue_teste.insert(5)
+queue_teste.remove()
+queue_teste.insert(6)
+queue_teste.remove()
+queue_teste.remove()
+queue_teste.insert(7)
+queue_teste.insert(8)
+queue_teste.insert(9)
+queue_teste.peek()
+queue_teste.destroy()
 queue_teste.peek()
