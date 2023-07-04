@@ -21,8 +21,15 @@ OPERAÇÕES que são afetas pelas restrições:
 Filas encadeadas tem as seguintes propriedades:
 Um descritor com o n[o de inicio e fim
 """
+
+
 class Node:
     def __init__(self,data):
         self.data = data
         self.next = None
+
+class DynamicQueue:
+    def __init__(self):
+        self.ini = None
+        self.end = None
 
