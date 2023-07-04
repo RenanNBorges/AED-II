@@ -41,7 +41,7 @@ class DynamicQueue:
         else:
             return True
 
-    def insert(self,data):
+    def insert(self, data):
         new_element = Node(data)
         if self.is_empty():
             self.ini = new_element
@@ -50,4 +50,9 @@ class DynamicQueue:
             self.end.next = new_element
 
         self.end = new_element
+
+    def peek(self):
+        return print(self.ini)
+
+
 
