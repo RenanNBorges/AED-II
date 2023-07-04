@@ -20,6 +20,7 @@ OPERAÇÕES que são afetas pelas restrições:
 
 Filas encadeadas tem as seguintes propriedades:
 Um descritor com o n[o de inicio e fim
+Não há limite em uma fila encadeada
 """
 
 
@@ -39,4 +40,14 @@ class DynamicQueue:
             return False
         else:
             return True
+
+    def insert(self,data):
+        new_element = Node(data)
+        if self.is_empty():
+            self.ini = new_element
+
+        else:
+            self.end.next = new_element
+
+        self.end = new_element
 
