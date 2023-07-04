@@ -28,8 +28,15 @@ class Node:
         self.data = data
         self.next = None
 
+
 class DynamicQueue:
     def __init__(self):
         self.ini = None
         self.end = None
+
+    def is_empty(self):
+        if self.ini and self.end is None:
+            return False
+        else:
+            return True
 
