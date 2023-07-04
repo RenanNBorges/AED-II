@@ -75,7 +75,7 @@ class StaticQueue:
                 self.ini = -1
                 self.end = -1
 
-            elif self.ini == self.ls and (self.li <= self.end and self.end < self.ini):
+            elif self.ini == self.ls and (self.li <= self.end < self.ini):
                 self.vector[self.ls] = None
                 self.ini = self.li
 
@@ -83,13 +83,12 @@ class StaticQueue:
                 self.ini = self.ini + 1
                 self.vector[self.ini-1] = None
 
-
             return True
         else:
             return False
 
     def destroy(self):
-        while (self.ini and self.end) !=/ -1:
+        while (self.ini and self.end) != -1:
             self.remove()
 
 
