@@ -1,4 +1,4 @@
-class Tabela:
+class Table:
     def __init__(self,sizemax):
         self.key = [None] * (sizemax + 1)
         self.valor = [None] * (sizemax + 1)
@@ -14,10 +14,16 @@ class Tabela:
             return True
 
     def is_full(self):
-        pass
+        if self.ini == self.li and self.end == self.ls:
+            return True
+        else:
+            return False
 
     def size(self):
-        pass
+        if not self.is_empty():
+            return self.end - (self.ini + 1)
+        else:
+            return 0
 
     def insert(self):
         pass
