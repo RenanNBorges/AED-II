@@ -7,6 +7,14 @@ class Table:
         self.ini = self.li - 1
         self.end = self.ls + 1
 
+    def __repr__(self):
+        string = ""
+        if not self.is_empty():
+            for i in range(self.ini,self.end + 1):
+                string = string + str(self.key[i]) + ":" + str(self.valor[i]) + "\n"
+
+        return string + "\n"
+
     def is_empty(self):
         if self.ini != self.li - 1 and self.end != self.ls + 1:
             return False
@@ -25,11 +33,20 @@ class Table:
         else:
             return 0
 
+    def consult(self,key):
+        if not self.is_empty():
+            for i in range(self.ini,self.end + 1):
+                if self.key[i] != key:
+                    continue
+                else:
+                    return self.valor[i]
+        else:
+            return 0
+
     def insert(self):
         pass
 
-    def consult(self):
-        pass
+
 
     def remove(self):
         pass
