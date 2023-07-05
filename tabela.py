@@ -1,5 +1,5 @@
 class Table:
-    def __init__(self,sizemax):
+    def __init__(self, sizemax):
         self.key = [None] * (sizemax + 1)
         self.valor = [None] * (sizemax + 1)
         self.li = 1
@@ -10,7 +10,7 @@ class Table:
     def __repr__(self):
         string = ""
         if not self.is_empty():
-            for i in range(self.ini,self.end + 1):
+            for i in range(self.ini, self.end + 1):
                 string = string + str(self.key[i]) + " : " + str(self.valor[i]) + "\n"
 
         return string + "\n"
@@ -35,7 +35,7 @@ class Table:
 
     def linear_search(self, key):
         if not self.is_empty():
-            for i in range(self.ini,self.end + 1):
+            for i in range(self.ini, self.end + 1):
                 if self.key[i] == key:
                     return i
         return 0
@@ -53,19 +53,22 @@ class Table:
             self.key[self.end] = key
             self.valor[self.end] = valor
 
-    def consult(self,key):
+    def consult(self, key):
         index = self.linear_search(key)
         if index < 0:
             return self.valor[index]
+
     def remove(self, key):
-        pass
+        index = self.linear_search(key)
+        if index > 0:
+            for i in range(index, self.end):
+                self.key[i] = self.key[i + 1]
+                self.valor[i] = self.valor[i + 1]
+            self.end -= 1
+
+    def destroy(self):
+        self.ini = self.li - 1
+        self.end = self.ls + 1
 
     def search(self, key):
         pass
-
-
-test_table = Table(10)
-test_table.insert("ABYG45", "CARRO 1")
-test_table.insert("ABYG31", "CARRO 2")
-print(test_table)
-test_table.remove("ABYG45")
