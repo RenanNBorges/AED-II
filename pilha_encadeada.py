@@ -32,23 +32,31 @@ class Node:
         self.data = data
         self.next = None
 
+    def __str__(self):
+        return f'{self.data} -> {self.next}'
+
+    def __repr__(self):
+        return f'{self.data} -> {self.next}'
+
 
 class DynamicStack:
     def __init__(self):
         self.__top = None
 
-    def is_empty(self):
+    def __repr__(self):
+        return f'{self.__top}'
 
+    def is_empty(self):
         if self.__top is not None:
             return False
         else:
             return True
 
     def peek(self):
-        if self.__top is not None:
-            return print(self.__top.data)
+        if not(self.is_empty()):
+            return self.__top.data
         else:
-            return print(None)
+            return None
 
     def push(self,data):
         new_top = Node(data)

@@ -11,14 +11,29 @@ def sorting_queue(queue_unorganized: DynamicQueue):
         if (s_sorted.is_empty() and s_assistant.is_empty()) or queue_unorganized.peek() < s_sorted.peek():
             s_sorted.push(queue_unorganized.peek())
             queue_unorganized.remove()
-        elif queue_unorganized.peek() > s_sorted:
-            pass
+            while not(s_assistant.is_empty()):
+                s_sorted.push(s_assistant.peek())
+                s_assistant.pop()
+
+        elif queue_unorganized.peek() > s_sorted.peek():
+            s_assistant.push(s_sorted.peek())
+            s_sorted.pop()
+    while not(s_sorted.is_empty()):
+        queue_unorganized.insert(s_sorted.peek())
+        s_sorted.pop()
+    return queue_unorganized
+
 
 
 
 
 queue = DynamicQueue()
 queue.insert(10)
-sorting_queue(queue)
+queue.insert(1)
+queue.insert(8)
+queue.insert(3)
+queue.insert(5)
+print(queue)
+print(sorting_queue(queue))
 
 

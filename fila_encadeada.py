@@ -30,13 +30,16 @@ class Node:
         self.next = None
 
     def __str__(self):
-        return f'{self.data} -> {self.next}'
+        return f'{self.data} <- {self.next}'
 
 
 class DynamicQueue:
     def __init__(self):
         self.ini = None
         self.end = None
+
+    def __repr__(self):
+        return f'{self.ini}'
 
     def is_empty(self):
         if self.ini and self.end is not None:
@@ -55,10 +58,10 @@ class DynamicQueue:
         self.end = new_element
 
     def peek(self):
-        if self.is_empty():
-            return None
-        else:
+        if not(self.is_empty()):
             return self.ini.data
+        else:
+            return None
 
     def remove(self):
         if self.is_empty():
