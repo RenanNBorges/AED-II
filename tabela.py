@@ -11,7 +11,7 @@ class Table:
         string = ""
         if not self.is_empty():
             for i in range(self.ini,self.end + 1):
-                string = string + str(self.key[i]) + ":" + str(self.valor[i]) + "\n"
+                string = string + str(self.key[i]) + " : " + str(self.valor[i]) + "\n"
 
         return string + "\n"
 
@@ -33,23 +33,39 @@ class Table:
         else:
             return 0
 
-    def consult(self,key):
+    def linear_search(self, key):
         if not self.is_empty():
             for i in range(self.ini,self.end + 1):
-                if self.key[i] != key:
-                    continue
-                else:
-                    return self.valor[i]
-        else:
-            return 0
+                if self.key[i] == key:
+                    return i
+        return 0
 
-    def insert(self):
-        pass
+    def insert(self, key, valor):
+        index = self.linear_search(key)
+        if index < 0:
+            self.valor[index] = valor
+        elif not self.is_full():
+            if self.is_empty():
+                self.ini = self.li
+                self.end = self.ini
+            else:
+                self.end = self.end + 1
+            self.key[self.end] = key
+            self.valor[self.end] = valor
 
-
-
-    def remove(self):
+    def consult(self,key):
+        index = self.linear_search(key)
+        if index < 0:
+            return self.valor[index]
+    def remove(self, key):
         pass
 
     def search(self, key):
         pass
+
+
+test_table = Table(10)
+test_table.insert("ABYG45", "CARRO 1")
+test_table.insert("ABYG31", "CARRO 2")
+print(test_table)
+test_table.remove("ABYG45")
