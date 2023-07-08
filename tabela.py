@@ -106,3 +106,6 @@ class Table:
                 middle_var = (ini_var + end_var) // 2
         return 0
 
+
+
+
