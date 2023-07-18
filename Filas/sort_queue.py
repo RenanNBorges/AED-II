@@ -1,5 +1,5 @@
-from fila_encadeada import DynamicQueue
-from pilha_encadeada import DynamicStack
+from Filas.fila_encadeada import DynamicQueue
+from Pilhas.pilha_encadeada import DynamicStack
 
 
 def sorting_queue(queue_unorganized: DynamicQueue):
